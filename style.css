@@ -3,5 +3,31 @@
     background-color: ivory;
     font-family: 'Open Sans', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.column-text {
+    width: 50%;
+}
+
+.nav-bar {
+    display: flex;
+}
+
+.nav-elem {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    border-bottom: 1px solid black; 
+    transition: border-bottom 0.5s;
 }
