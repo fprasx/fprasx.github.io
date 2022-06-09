@@ -286,7 +286,9 @@ smaller, therefore it is safe to <code>transmute_copy</code> to an <code>AtomicU
 writing a macro that produces different implementations of the vector with
 different atomic types when storing types of different sizes. For example,
 <code>SecVec&lt;(i8, i8)&gt;</code> would store the data in <code>AtomicU16</code>. This would save on
-space.</p>
+space. I don't think the vector would work for zero-sized types because of how
+we <code>transmute</code>. It would also be very inefficient because of all the unnecessary
+allocations!</p>
 <p>Note that <code>last_elem</code>'s type is <code>&amp;AtomicU64</code>; it's the location of the write.
 When we load from <code>last_elem</code>, we are getting the <code>old</code> element. We now have the
 three pieces of data necessary for <code>compare_exchange</code>: a memory location (the

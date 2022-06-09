@@ -145,7 +145,13 @@
                     <main>
                         <h1 id="building-a-rusty-lock-free-dynamically-resizable-array"><a class="header" href="#building-a-rusty-lock-free-dynamically-resizable-array">Building a Rusty, Lock-free Dynamically Resizable Array</a></h1>
 <p>Dedicated to HS, whom I wouldn't compare-and-swap with anyone else.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="the-goal"><a class="header" href="#the-goal">The Goal</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><blockquote>
+<p>You can read the code we'll write and the code for the book
+<a href="https://github.com/fprasx/unlocked">here</a>. The main files for the <code>Rust</code> code
+are <a href="https://github.com/fprasx/unlocked/blob/main/src/leaky.rs">leaky.rs</a> and
+<a href="https://github.com/fprasx/unlocked/blob/main/src/sealed.rs">sealed.rs</a>.</p>
+</blockquote>
+<h1 id="the-goal"><a class="header" href="#the-goal">The Goal</a></h1>
 <p>This book has a few goals.</p>
 <p>Inspired by
 <a href="https://rust-unofficial.github.io/too-many-lists/">Learn Rust With Entirely Too Many Linked Lists</a>,
@@ -206,7 +212,7 @@ chapters of <a href="https://doc.rust-lang.org/book/">The Book</a>, you should b
 Even if not, as long as you understand most of Rust syntax and are fine with
 looking something up every once in a while, you'll be fine.
 <a href="https://doc.rust-lang.org/book/ch16-00-concurrency.html">Chapter 16</a> is very
-helpful though as it's the chapter on concurrency.</p>
+helpful as well as it's the chapter on concurrency.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="a-message"><a class="header" href="#a-message">A Message</a></h2>
 <p>Although I want you to come away from this book having learned something, and
 hopefully feeling inspired to write more exciting code, this book is also a
@@ -1408,9 +1414,11 @@ references.</p>
 
 fn main() {
     let ptr = new_descriptor();
+    // Use the pointer to the Descriptor
     let d = unsafe { &amp;*ptr.load(Ordering::Acquire) };
 }
 
+// Return a pointer to a Descriptor
 fn new_descriptor() -&gt; AtomicPtr&lt;Descriptor&gt; {
     let d = Descriptor { size: 0, write: None };
     AtomicPtr::new(&amp;d as *const _ as *mut _)
@@ -1439,12 +1447,15 @@ Translation: <code>use-after-free</code>; classic UB.</p>
 the stack</strong>. When <code>new_descriptor</code> returns, the local variable <code>d: Descriptor</code>
 get's destroyed, and the pointer we made from the reference is invalidated.
 Thus, we <code>use-after-free</code> when we deference a freed allocation.</p>
-<p>This is the danger of using raw pointers. With references, Rust will keep the
-value alive until there are no references to it and it's safe to drop at the end
-of a scope.</p>
-<p>This example also highlights why only dereferencing a raw pointer is <code>unsafe</code>.
-It's perfectly safe to make one, but we have no guarantees about what it's
-pointing to, and that's why the dereference is <code>unsafe</code>.</p>
+<p>This is the danger of using raw pointers. If we just passed on the reference
+<code>Descriptor</code>, <code>Rust</code> would
+<a href="https://rust-lang.github.io/rfcs/3027-infallible-promotion.html">promote</a> that
+value to have a <code>'static</code> lifetime if possible, or return an error if not. With
+raw pointers, <code>Rust</code> doesn't manage lifetimes, so we have to ensure that our
+pointers are valid.</p>
+<p>This is why only dereferencing a raw pointer is <code>unsafe</code>. It's perfectly safe to
+make one, but we have no guarantees about what it's pointing to, and that's why
+the dereference is <code>unsafe</code>.</p>
 <p>Thank you <code>Miri</code>!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="complete_write-1"><a class="header" href="#complete_write-1"><code>complete_write()</code></a></h1>
 <p>I think <code>complete_write</code> is the first function I wrote for the vector's core
@@ -1692,7 +1703,9 @@ smaller, therefore it is safe to <code>transmute_copy</code> to an <code>AtomicU
 writing a macro that produces different implementations of the vector with
 different atomic types when storing types of different sizes. For example,
 <code>SecVec&lt;(i8, i8)&gt;</code> would store the data in <code>AtomicU16</code>. This would save on
-space.</p>
+space. I don't think the vector would work for zero-sized types because of how
+we <code>transmute</code>. It would also be very inefficient because of all the unnecessary
+allocations!</p>
 <p>Note that <code>last_elem</code>'s type is <code>&amp;AtomicU64</code>; it's the location of the write.
 When we load from <code>last_elem</code>, we are getting the <code>old</code> element. We now have the
 three pieces of data necessary for <code>compare_exchange</code>: a memory location (the
