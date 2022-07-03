@@ -9,7 +9,11 @@
 }
 
 .column-text {
-    width: 50%;
+    max-width: 50%;
+    min-width: 300px;
+    display: block;
+    position: relative;
+    background-color: FF5733;
 }
 
 .nav-bar {
