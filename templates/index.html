@@ -51,7 +51,7 @@
         <div class="content container">
             {% block content %}
                 <div class="posts">
-                    {% for page in section.pages | reverse %}
+                    {% for page in section.pages %}
                       <div class="post">
                         <h1 class="post-title">
                           <a href="{{ page.permalink }}">
@@ -60,6 +60,9 @@
                         </h1>
 
                         <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+                        {% if config.description %}
+                        <p>{{ page.summary | safe }}</p>
+                        {% endif %}
                       </div>
                     {% endfor %}
                 </div>
