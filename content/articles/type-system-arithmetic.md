@@ -229,7 +229,7 @@ impl Sub for (Zero, Zero) { // 0 - 0 = 0
     type Diff = Zero;
 }
 
-impl<T> Sub for (Succ<T>, Zero) { // x = 0 = 0
+impl<T> Sub for (Succ<T>, Zero) { // x - 0 = x
     type Diff = Succ<T>;
 }
 
