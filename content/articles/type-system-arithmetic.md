@@ -297,13 +297,13 @@ where
     (Succ<U>, <(T, Succ<U>) as Mul>::Product): Add,
 {
     type Product = <(
-        Succ<U>,                       // x
+        Succ<U>,                       // y
         <(T, Succ<U>) as Mul>::Product // (x - 1) * y
     ) as Add>::Sum;
 }
 ```
 
-Here, we're using the fact that `x * y = x + (x - 1) * y`. We recursively
+Here, we're using the fact that `x * y = y + (x - 1) * y`. We recursively
 calculate the second term, and then add it to the first factor!. Remember that
 if `Succ<T>` represents `T + 1`, then `T` represents `Succ<T> - 1`.
 
