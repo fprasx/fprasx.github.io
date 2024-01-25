@@ -1,6 +1,6 @@
 +++
 date = 2024-01-23
-title = "Encryption in 325 Characters or Less with Bennett"
+title = "Encryption in 325 Characters or Less with Bennett!"
 +++
 
 What encryption scheme is this?
