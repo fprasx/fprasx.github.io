@@ -365,11 +365,11 @@ That's basically it! There were probably some other small optimizations we did
 that aren't worth covering here. Overall, it's so satisfying just seeing the code
 shrink and shrink. You should give golfing a try :)
 
-Check out Bennett's [blog](https://andorlando.github.io/static/blogs/index)
-and [GitHub](https://github.com/andOrlando) for his writeup (and other insane
-code he's written).
+Check out Bennett's [blog](https://andorlando.github.io/static/blogs/index) for
+his writeup and [GitHub](https://github.com/andOrlando) for other insane
+code he's written.
 
-And lastly, you can see the code in it's full glory on
+And lastly, you can see the code in its full glory on
 [GitHub](https://github.com/PontifexEncrypt/Pontifex/blob/main/solitaire-golf-fprasx.py)
 and right here:
 ```python
