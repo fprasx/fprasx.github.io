@@ -29,7 +29,7 @@ from the book _Cryptonomicon_ by Neal Stephenson!
 I'll give a quick rundown of the algorithm and then we can get to the interesting
 part: golfing, aka writing a program to do a task using the fewest characters.
 
-## Overview
+# Overview
 
 The most important part of the algorithm is generating **keystream values**.
 The intention is for these values to be basically random. For each plaintext
@@ -44,7 +44,7 @@ We'll also use the jokers, which we call _A_ and _B_. You can think of them as
 cards 53 and 54. Let's walk through the algorithm as we condense this code.
 We roughly started with this code for generating keystream values[^2].
 
-## Moving the jokers
+# Moving the jokers
 
 The first step is to swap the _A_ joker with the card under
 it. If it's the last card, instead place it second from the top.
