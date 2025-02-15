@@ -8,7 +8,7 @@ compile_sass = true
 build_search_index = false
 
 title = "Felix Prasanna"
-description = "I'm an MIT student who enjoys writing and thinking about performance engineering, compilers, and other things low-level."
+description = "MIT student who enjoys performance engineering, compilers, and creating unconventional code"
 generate_feed = true
 feed_filename = "atom.xml"
 
