@@ -9,16 +9,16 @@ Hello!
 
 I'm Felix, an MIT student studying CS.
 
-My main interests lie around **performance engineering**, and other system software
+My main interests lie around **performance engineering**, and other systems software
 like **compilers** and data structure implementations. At its core, I want my work
 to help other developers. I think these areas of CS dually satisfy that mission and my
 intrinsic curiosity in a nice way.
 
 This summer (2025), I'll be a software engineering intern at
 [Jane Street](https://www.janestreet.com/). In past summers, I interned at:
-* [Neon](https://neon.tech), creating on a Rust-based network component in the
+* [JHU APL](https://www.jhuapl.edu/): hacking things.
+* [Neon](https://neon.tech): creating on a networked component in the
   Autoscaling system that monitors VM's compute and memory usage.
-* [JHU APL](https://www.jhuapl.edu/), hacking things for the government.
 
 Check out my [GitHub](https://github.com/fprasx) to see some of the software
 I've written. Two projects that I'm pretty proud of are:
