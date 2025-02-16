@@ -21,6 +21,7 @@ highlight_code = true
 hyde_theme = "theme-base-0d"
 hyde_links = [
     {url = "/about", name = "About"},
+    {url = "/notes", name = "Course Notes"},
     {url = "/articles", name = "Articles"},
     {url = "https://github.com/fprasx", name = "GitHub"},
     {url = "/atom.xml", name = "RSS"},
