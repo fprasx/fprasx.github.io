@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Felix Prasanna</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://fprasx.github.io/print.css" media="print">
+      <link rel="stylesheet" href="https://fprasx.github.io/poole.css">
+      <link rel="stylesheet" href="https://fprasx.github.io/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://fprasx.github.io/atom.xml">
+      
+
+      
+      
+
+      <script src="/footnotes.js"></script>
+    </head>
+
+    <body class="theme-base-0d ">
+        
+            <div class="sidebar">
+                <div class="container ">
+                    <div class="sidebar-about">
+                        
+                            <a href="https:&#x2F;&#x2F;fprasx.github.io"><h1>Felix Prasanna</h1></a>
+                            
+                            <p class="lead">MIT student who enjoys performance engineering, compilers, and creating unconventional code</p>
+                            
+                        
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;about">About</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;notes">Course Notes</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;articles">Articles</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;github.com&#x2F;fprasx">GitHub</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;atom.xml">RSS</a></li>
+                        
+                        
+                    </ul>
+                    <p>
+                      &copy; Felix Prasanna 2025
+                      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a>
+                    </p>
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+                <div class="posts">
+                    
+                      <div class="post">
+                        <h1 class="post-title">
+                          <a href="https:&#x2F;&#x2F;fprasx.github.io&#x2F;articles&#x2F;encryption-golf-with-bennett&#x2F;">
+                            Encryption in 325 Characters or Less with Bennett!
+                          </a>
+                        </h1>
+
+                        <span class="post-date">2024-01-23</span>
+                        
+                        <p><p>What encryption scheme is this?</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">e</span><span>(</span><span style="color:#bf616a;">s</span><span>,</span><span style="color:#bf616a;">d</span><span>,</span><span style="color:#bf616a;">r</span><span>=&quot;&quot;):
+</span><span> p=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">j</span><span>,</span><span style="color:#bf616a;">d</span><span>:</span><span style="color:#d08770;">53</span><span>&gt;(k:=d.</span><span style="color:#bf616a;">index</span><span>(j))and d[:k]+[d[k+</span><span style="color:#d08770;">1</span><span>],j]+d[k+</span><span style="color:#d08770;">2</span><span>:]
+</span><span> or[d[</span><span style="color:#d08770;">0</span><span>],j]+d[</span><span style="color:#d08770;">1</span><span>:k];d=</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">54</span><span>,</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">54</span><span>,</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">53</span><span>,d)));l,h=</span><span style="color:#96b5b4;">sorted</span><span>([d.</span><span style="color:#bf616a;">index</span><span>(</span><span style="color:#d08770;">53</span><span>)
+</span><span> ,d.</span><span style="color:#bf616a;">index</span><span>(</span><span style="color:#d08770;">54</span><span>)]) d=d[h+</span><span style="color:#d08770;">1</span><span>:]+d[l:h+</span><span style="color:#d08770;">1</span><span>]+d[:l];b=</span><span style="color:#96b5b4;">min</span><span>(d[-</span><span style="color:#d08770;">1</span><span>],</span><span style="color:#d08770;">53</span><span>);d=d[b:-</span><span style="color:#d08770;">1</span><span>]
+</span><span> +d[:b]+[d[-</span><span style="color:#d08770;">1</span><span>]];o=d[</span><span style="color:#96b5b4;">min</span><span>(d[</span><span style="color:#d08770;">0</span><span>],</span><span style="color:#d08770;">53</span><span>)];</span><span style="color:#b48ead;">return </span><span>s and(</span><span style="color:#d08770;">53</span><span>&gt;o and </span><span style="color:#bf616a;">e</span><span>(s[</span><span style="color:#d08770;">1</span><span>:],d,
+</span><span> r+</span><span style="color:#96b5b4;">chr</span><span>(</span><span style="color:#d08770;">97</span><span>+(</span><span style="color:#96b5b4;">ord</span><span>(s[</span><span style="color:#d08770;">0</span><span>])-</span><span style="color:#d08770;">97</span><span>+o)%</span><span style="color:#d08770;">26</span><span>))or </span><span style="color:#bf616a;">e</span><span>(s,d,r))or r
+</span><span>encrypt=e
+</span></code></pre>
+<p>See <strong>Bennett's</strong> post <a href="https://andorlando.github.io/static/blogs/golfingwithfelix">here</a>!</p>
+</p>
+                        
+                      </div>
+                    
+                      <div class="post">
+                        <h1 class="post-title">
+                          <a href="https:&#x2F;&#x2F;fprasx.github.io&#x2F;articles&#x2F;type-system-arithmetic&#x2F;">
+                            Doing First Grade Math in Rust's Type System
+                          </a>
+                        </h1>
+
+                        <span class="post-date">2024-01-04</span>
+                        
+                        <p><p>Arithmetic is hard. Luckily, we can fix that using Rust's Expressive Type
+System™️.</p>
+</p>
+                        
+                      </div>
+                    
+                      <div class="post">
+                        <h1 class="post-title">
+                          <a href="https:&#x2F;&#x2F;fprasx.github.io&#x2F;articles&#x2F;write-a-concurrent-vector&#x2F;">
+                            Write Yourself a Concurrent Vector
+                          </a>
+                        </h1>
+
+                        <span class="post-date">2022-06-01</span>
+                        
+                        <p><p>Book detailing the process, techniques, and challenges associated with implementing
+a lock-free, thread-safe vector:
+<a href="/concurrent-vector-book/index.html">Writing a Concurrent Vector in Rust</a></p>
+</p>
+                        
+                      </div>
+                    
+                </div>
+            
+        </div>
+
+    </body>
+
+</html>
