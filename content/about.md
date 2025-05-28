@@ -15,7 +15,7 @@ to help other developers. I think these areas of CS dually satisfy that mission 
 intrinsic curiosity in a nice way.
 
 This summer (2025), I'll be a software engineering intern at
-[Jane Street](https://www.janestreet.com/). In past summers, I interned at:
+a quantitative trading firm. In past summers, I interned at:
 * [JHU APL](https://www.jhuapl.edu/): hacking things.
 * [Neon](https://neon.tech): creating on a networked component in the
   Autoscaling system that monitors VM's compute and memory usage.
