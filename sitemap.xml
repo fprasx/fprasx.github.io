@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://fprasx.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://fprasx.github.io/about/</loc>
+        <lastmod>2024-01-01</lastmod>
+    </url>
+    <url>
+        <loc>https://fprasx.github.io/articles/</loc>
+    </url>
+    <url>
+        <loc>https://fprasx.github.io/articles/encryption-golf-with-bennett/</loc>
+        <lastmod>2024-01-23</lastmod>
+    </url>
+    <url>
+        <loc>https://fprasx.github.io/articles/type-system-arithmetic/</loc>
+        <lastmod>2024-01-04</lastmod>
+    </url>
+    <url>
+        <loc>https://fprasx.github.io/articles/write-a-concurrent-vector/</loc>
+        <lastmod>2022-06-01</lastmod>
+    </url>
+    <url>
+        <loc>https://fprasx.github.io/notes/</loc>
+        <lastmod>2025-02-15</lastmod>
+    </url>
+</urlset>

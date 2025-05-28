@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Felix Prasanna</title>
+    <subtitle>MIT student who enjoys performance engineering, compilers, and creating unconventional code</subtitle>
+    <link href="https://fprasx.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://fprasx.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-02-15T00:00:00+00:00</updated>
+    <id>https://fprasx.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Course Notes</title>
+        <published>2025-02-15T00:00:00+00:00</published>
+        <updated>2025-02-15T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://fprasx.github.io/notes/" type="text/html"/>
+        <id>https://fprasx.github.io/notes/</id>
+        
+        <summary type="html">&lt;p&gt;Nice LaTex notes for some courses I&#x27;ve taken&#x2F;passed out of:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;18.03-ase-notes.pdf&quot;&gt;18.03 Differential Equations (ASE)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Encryption in 325 Characters or Less with Bennett!</title>
+        <published>2024-01-23T00:00:00+00:00</published>
+        <updated>2024-01-23T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://fprasx.github.io/articles/encryption-golf-with-bennett/" type="text/html"/>
+        <id>https://fprasx.github.io/articles/encryption-golf-with-bennett/</id>
+        
+        <summary type="html">&lt;p&gt;What encryption scheme is this?&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;d&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&amp;quot;):
+&lt;&#x2F;span&gt;&lt;span&gt; p=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;lambda &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;j&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;d&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;53&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;(k:=d.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;index&lt;&#x2F;span&gt;&lt;span&gt;(j))and d[:k]+[d[k+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;],j]+d[k+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;:]
+&lt;&#x2F;span&gt;&lt;span&gt; or[d[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;],j]+d[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;:k];d=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;54&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;54&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;53&lt;&#x2F;span&gt;&lt;span&gt;,d)));l,h=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;sorted&lt;&#x2F;span&gt;&lt;span&gt;([d.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;index&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;53&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt; ,d.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;index&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;54&lt;&#x2F;span&gt;&lt;span&gt;)]) d=d[h+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;:]+d[l:h+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;]+d[:l];b=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;min&lt;&#x2F;span&gt;&lt;span&gt;(d[-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;],&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;53&lt;&#x2F;span&gt;&lt;span&gt;);d=d[b:-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt; +d[:b]+[d[-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;]];o=d[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;min&lt;&#x2F;span&gt;&lt;span&gt;(d[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;],&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;53&lt;&#x2F;span&gt;&lt;span&gt;)];&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;s and(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;53&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;o and &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;(s[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;:],d,
+&lt;&#x2F;span&gt;&lt;span&gt; r+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;chr&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;97&lt;&#x2F;span&gt;&lt;span&gt;+(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;ord&lt;&#x2F;span&gt;&lt;span&gt;(s[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;])-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;97&lt;&#x2F;span&gt;&lt;span&gt;+o)%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;26&lt;&#x2F;span&gt;&lt;span&gt;))or &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;(s,d,r))or r
+&lt;&#x2F;span&gt;&lt;span&gt;encrypt=e
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;See &lt;strong&gt;Bennett&#x27;s&lt;&#x2F;strong&gt; post &lt;a href=&quot;https:&#x2F;&#x2F;andorlando.github.io&#x2F;static&#x2F;blogs&#x2F;golfingwithfelix&quot;&gt;here&lt;&#x2F;a&gt;!&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Doing First Grade Math in Rust&#x27;s Type System</title>
+        <published>2024-01-04T00:00:00+00:00</published>
+        <updated>2024-01-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://fprasx.github.io/articles/type-system-arithmetic/" type="text/html"/>
+        <id>https://fprasx.github.io/articles/type-system-arithmetic/</id>
+        
+        <summary type="html">&lt;p&gt;Arithmetic is hard. Luckily, we can fix that using Rust&#x27;s Expressive Type
+System™️.&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>About Me</title>
+        <published>2024-01-01T00:00:00+00:00</published>
+        <updated>2024-01-01T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://fprasx.github.io/about/" type="text/html"/>
+        <id>https://fprasx.github.io/about/</id>
+        
+        <summary type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Write Yourself a Concurrent Vector</title>
+        <published>2022-06-01T00:00:00+00:00</published>
+        <updated>2022-06-01T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://fprasx.github.io/articles/write-a-concurrent-vector/" type="text/html"/>
+        <id>https://fprasx.github.io/articles/write-a-concurrent-vector/</id>
+        
+        <summary type="html">&lt;p&gt;Book detailing the process, techniques, and challenges associated with implementing
+a lock-free, thread-safe vector:
+&lt;a href=&quot;&#x2F;concurrent-vector-book&#x2F;index.html&quot;&gt;Writing a Concurrent Vector in Rust&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+</feed>
