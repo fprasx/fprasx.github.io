@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Felix Prasanna</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://fprasx.github.io/print.css" media="print">
+      <link rel="stylesheet" href="https://fprasx.github.io/poole.css">
+      <link rel="stylesheet" href="https://fprasx.github.io/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://fprasx.github.io/atom.xml">
+      
+
+      
+      
+
+      <script src="/footnotes.js"></script>
+    </head>
+
+    <body class="theme-base-0d ">
+        
+            <div class="sidebar">
+                <div class="container ">
+                    <div class="sidebar-about">
+                        
+                            <a href="https:&#x2F;&#x2F;fprasx.github.io"><h1>Felix Prasanna</h1></a>
+                            
+                            <p class="lead">MIT student who enjoys performance engineering, compilers, and creating unconventional code</p>
+                            
+                        
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;about">About</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;notes">Course Notes</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;articles">Articles</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;github.com&#x2F;fprasx">GitHub</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;atom.xml">RSS</a></li>
+                        
+                        
+                    </ul>
+                    <p>
+                      &copy; Felix Prasanna 2025
+                      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a>
+                    </p>
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+<div class="post">
+  <h1 class="post-title">Encryption in 325 Characters or Less with Bennett!</h1>
+  <span class="post-date">2024-01-23</span>
+  <p>What encryption scheme is this?</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">e</span><span>(</span><span style="color:#bf616a;">s</span><span>,</span><span style="color:#bf616a;">d</span><span>,</span><span style="color:#bf616a;">r</span><span>=&quot;&quot;):
+</span><span> p=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">j</span><span>,</span><span style="color:#bf616a;">d</span><span>:</span><span style="color:#d08770;">53</span><span>&gt;(k:=d.</span><span style="color:#bf616a;">index</span><span>(j))and d[:k]+[d[k+</span><span style="color:#d08770;">1</span><span>],j]+d[k+</span><span style="color:#d08770;">2</span><span>:]
+</span><span> or[d[</span><span style="color:#d08770;">0</span><span>],j]+d[</span><span style="color:#d08770;">1</span><span>:k];d=</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">54</span><span>,</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">54</span><span>,</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">53</span><span>,d)));l,h=</span><span style="color:#96b5b4;">sorted</span><span>([d.</span><span style="color:#bf616a;">index</span><span>(</span><span style="color:#d08770;">53</span><span>)
+</span><span> ,d.</span><span style="color:#bf616a;">index</span><span>(</span><span style="color:#d08770;">54</span><span>)]) d=d[h+</span><span style="color:#d08770;">1</span><span>:]+d[l:h+</span><span style="color:#d08770;">1</span><span>]+d[:l];b=</span><span style="color:#96b5b4;">min</span><span>(d[-</span><span style="color:#d08770;">1</span><span>],</span><span style="color:#d08770;">53</span><span>);d=d[b:-</span><span style="color:#d08770;">1</span><span>]
+</span><span> +d[:b]+[d[-</span><span style="color:#d08770;">1</span><span>]];o=d[</span><span style="color:#96b5b4;">min</span><span>(d[</span><span style="color:#d08770;">0</span><span>],</span><span style="color:#d08770;">53</span><span>)];</span><span style="color:#b48ead;">return </span><span>s and(</span><span style="color:#d08770;">53</span><span>&gt;o and </span><span style="color:#bf616a;">e</span><span>(s[</span><span style="color:#d08770;">1</span><span>:],d,
+</span><span> r+</span><span style="color:#96b5b4;">chr</span><span>(</span><span style="color:#d08770;">97</span><span>+(</span><span style="color:#96b5b4;">ord</span><span>(s[</span><span style="color:#d08770;">0</span><span>])-</span><span style="color:#d08770;">97</span><span>+o)%</span><span style="color:#d08770;">26</span><span>))or </span><span style="color:#bf616a;">e</span><span>(s,d,r))or r
+</span><span>encrypt=e
+</span></code></pre>
+<p>See <strong>Bennett's</strong> post <a href="https://andorlando.github.io/static/blogs/golfingwithfelix">here</a>!</p>
+<span id="continue-reading"></span>
+<p>Basically, I was proctoring an informatics tournament to get a free hoodie and
+some food, and I bumped into my friend Bennett from high school. Naturally, we decided
+to catch up and golf for nine hours straight<sup class="footnote-reference"><a href="#1">1</a></sup> a few days later :))</p>
+<p>Anyways, the answer is <a href="https://en.wikipedia.org/wiki/Solitaire_(cipher)">Solitaire</a>
+from the book <em>Cryptonomicon</em> by Neal Stephenson!</p>
+<p>I'll give a quick rundown of the algorithm and then we can get to the interesting
+part: golfing, aka writing a program to do a task using the fewest characters.</p>
+<h1 id="overview">Overview</h1>
+<p>The most important part of the algorithm is generating <strong>keystream values</strong>.
+The intention is for these values to be basically random. For each plaintext
+character, we add in a keystream value and mod by 26, resulting in a new encrypted
+character. For example, if our plaintext letter is &quot;p&quot; (16), and our keystream
+value is &quot;k&quot; (11), we would add these to get 27 and mod by 26 to get 1, which
+corresponds to &quot;a&quot;, our new encrypted value.</p>
+<p>So how do we go about making these key stream values? There are roughly 5 steps,
+and all you need is a deck of cards. Number the 52 regular cards 1 to 52.
+We'll also use the jokers, which we call <em>A</em> and <em>B</em>. You can think of them as
+cards 53 and 54. Let's walk through the algorithm as we condense this code.
+We roughly started with this code for generating keystream values<sup class="footnote-reference"><a href="#2">2</a></sup>.</p>
+<h1 id="moving-the-jokers">Moving the jokers</h1>
+<p>The first step is to swap the <em>A</em> joker with the card under
+it. If it's the last card, instead place it second from the top.</p>
+<p>Representing the deck as a list of integers from 1 to 54, we have the following
+helpers:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># get the index of a card
+</span><span>index=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>, </span><span style="color:#bf616a;">x</span><span>: l.</span><span style="color:#bf616a;">index</span><span>(x)
+</span><span>
+</span><span style="color:#65737e;"># push the card at index i down normally
+</span><span>push=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>, </span><span style="color:#bf616a;">i</span><span>: l[:i] + [l[i + </span><span style="color:#d08770;">1</span><span>]] + [l[i]] + l[i + </span><span style="color:#d08770;">2</span><span>:]
+</span></code></pre>
+<p>Combining these two, we have the following to cycle the <em>A</em> joker:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>aidx = </span><span style="color:#bf616a;">index</span><span>(deck, A)
+</span><span>deck = </span><span style="color:#bf616a;">push</span><span>(deck, aidx) </span><span style="color:#b48ead;">if </span><span>aidx != </span><span style="color:#bf616a;">DECKSIZE </span><span>- </span><span style="color:#d08770;">1 </span><span style="color:#b48ead;">else </span><span>(
+</span><span>    [deck[</span><span style="color:#d08770;">0</span><span>], deck[aidx], *deck[</span><span style="color:#d08770;">1</span><span>:aidx]])
+</span></code></pre>
+<p>The last line handles the edge case where the joker is already on the bottom.
+There are already some easy pickings: just shorten the variable names!</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;"># aidx -&gt; a, deck -&gt; d, DECKSIZE - 1 -&gt; 53
+</span><span>a = </span><span style="color:#bf616a;">index</span><span>(d, A)
+</span><span>d = </span><span style="color:#bf616a;">push</span><span>(d, a) </span><span style="color:#b48ead;">if </span><span>a != </span><span style="color:#d08770;">53 </span><span style="color:#b48ead;">else </span><span>(
+</span><span>    [d[</span><span style="color:#d08770;">0</span><span>], d[a], *d[</span><span style="color:#d08770;">1</span><span>:a]])
+</span></code></pre>
+<p>We can also eliminate some spaces, but let's keep them now for readability.</p>
+<p>It's time for our first real optimization: <strong>better ternaries</strong>. This transformation
+saves one character per ternary:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>x </span><span style="color:#b48ead;">if </span><span>cond </span><span style="color:#b48ead;">else </span><span>y
+</span><span>cond and x or y
+</span></code></pre>
+<p>Our final form for Step 1 will then be this for now:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>a = </span><span style="color:#bf616a;">index</span><span>(d, A)
+</span><span>d = a != </span><span style="color:#d08770;">53 </span><span>and </span><span style="color:#bf616a;">push</span><span>(d, a) or [d[</span><span style="color:#d08770;">0</span><span>], d[a], *d[</span><span style="color:#d08770;">1</span><span>:a]]
+</span></code></pre>
+<p>The next step is to move the <em>B</em> joker in the same way twice, and this is where
+the fun really starts. We have something like:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>index=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>, </span><span style="color:#bf616a;">x</span><span>: l.</span><span style="color:#bf616a;">index</span><span>(x)
+</span><span>push=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>, </span><span style="color:#bf616a;">i</span><span>: l[:i] + [l[i + </span><span style="color:#d08770;">1</span><span>]] + [l[i]] + l[i + </span><span style="color:#d08770;">2</span><span>:]
+</span><span>
+</span><span>a = </span><span style="color:#bf616a;">index</span><span>(d, A)
+</span><span>d = a != </span><span style="color:#d08770;">53 </span><span>and </span><span style="color:#bf616a;">push</span><span>(d, a) or [d[</span><span style="color:#d08770;">0</span><span>], d[a], *d[</span><span style="color:#d08770;">1</span><span>:a]]
+</span><span>b = </span><span style="color:#bf616a;">index</span><span>(d, B)
+</span><span>d = b != </span><span style="color:#d08770;">53 </span><span>and </span><span style="color:#bf616a;">push</span><span>(d, b) or [d[</span><span style="color:#d08770;">0</span><span>], d[b], *d[</span><span style="color:#d08770;">1</span><span>:b]]
+</span><span>b = </span><span style="color:#bf616a;">index</span><span>(d, B)
+</span><span>d = b != </span><span style="color:#d08770;">53 </span><span>and </span><span style="color:#bf616a;">push</span><span>(d, b) or [d[</span><span style="color:#d08770;">0</span><span>], d[b], *d[</span><span style="color:#d08770;">1</span><span>:b]]
+</span></code></pre>
+<p>Since the motif <code>[d[0], d[b], *d[1:b]]</code> is used so many times, let's put it
+in a <code>lambda</code>. Let's condense our helpers now:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>index=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">x</span><span>:l.</span><span style="color:#bf616a;">index</span><span>(x)
+</span><span>push=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:l[:i]+[l[i+</span><span style="color:#d08770;">1</span><span>]]+[l[i]]+l[i+</span><span style="color:#d08770;">2</span><span>:]
+</span><span>cycle=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:[l[</span><span style="color:#d08770;">0</span><span>],l[b],*l[</span><span style="color:#d08770;">1</span><span>:b]]
+</span></code></pre>
+<p>These look pretty small, but all three will turn out to be suboptimal! Notice
+in <code>push</code> that we wrap two elements in <code>[]</code> to turn them into lists and then
+concatenate them. This can be better done with a comma:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;">#                            vvv
+</span><span>push=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:l[:i]+[l[i+</span><span style="color:#d08770;">1</span><span>]]+[l[i]]+l[i+</span><span style="color:#d08770;">2</span><span>:]
+</span><span style="color:#65737e;">#                            v
+</span><span>push=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:l[:i]+[l[i+</span><span style="color:#d08770;">1</span><span>],l[i]]+l[i+</span><span style="color:#d08770;">2</span><span>:]
+</span></code></pre>
+<p>Since these two elements are next to each other in the original list, we tried to
+use slicing like: <code>l[i-1:i+1:-1]</code>, but this was no better. Let's take a look
+at <code>cycle</code> now. Firstly, the <code>*</code> is suboptimal and we can just use <code>+</code>, while
+creating a new list for the first two elements:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>cycle=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:[l[</span><span style="color:#d08770;">0</span><span>],l[b],*l[</span><span style="color:#d08770;">1</span><span>:b]]
+</span><span style="color:#65737e;">#                v         v
+</span><span>cycle=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:[l[</span><span style="color:#d08770;">0</span><span>],l[b]]+l[</span><span style="color:#d08770;">1</span><span>:b]
+</span></code></pre>
+<p>But it doesn't stop there! We actually can use slicing here. We can actually
+slice with a step size of <code>b-1</code> to get the <code>0</code>th element and the <code>b</code>th. Since
+<code>b</code> is the last index, we won't get any extra elements.</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>cycle=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:[l[</span><span style="color:#d08770;">0</span><span>],l[b]]+l[</span><span style="color:#d08770;">1</span><span>:b]
+</span><span>cycle=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:l[</span><span style="color:#d08770;">0</span><span>:b+</span><span style="color:#d08770;">1</span><span>:b]+l[</span><span style="color:#d08770;">1</span><span>:b]
+</span></code></pre>
+<p>But it gets even better! We can actually just omit the indices:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>cycle=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:[l[</span><span style="color:#d08770;">0</span><span>],l[b],*l[</span><span style="color:#d08770;">1</span><span>:b]]
+</span><span>cycle=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>,</span><span style="color:#bf616a;">i</span><span>:l[::b]+l[</span><span style="color:#d08770;">1</span><span>:b]
+</span></code></pre>
+<p>And we've not eliminated a full <strong>5</strong> characters from <code>cycle</code>! This is actually
+pretty massive.</p>
+<p>Notice how both <code>cycle</code> and <code>push</code> take an index? We can save some space by only having
+that parameter occur once, if we fuse the two functions into one that takes the joker as
+a parameter and moves it:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;">#             vvvvvvvvv                  v 
+</span><span>p=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">j</span><span>:</span><span style="color:#d08770;">53</span><span>&gt;(k:=</span><span style="color:#bf616a;">i</span><span>(j))and d[:k]+[d[k+</span><span style="color:#d08770;">1</span><span>],j]+d[k+</span><span style="color:#d08770;">2</span><span>:]or d[::k]+d[</span><span style="color:#d08770;">1</span><span>:k]
+</span></code></pre>
+<p>We also introduce the <strong>walrus operator</strong> to cache the result of a computation
+while inside an expression. <code>(x:=expr)</code> evaluates to <code>expr</code>, and <em>also</em> defines
+the binding <code>x</code>. Super useful, as we can now use <code>i(j)</code> in multiple places without
+writing it out. Also notice that we replace <code>d[k]</code> with <code>j</code>, since <code>k</code> is by definition
+the index of <code>j</code>. Instead of using checking if the joker index is <code>!= 53</code>,
+we check if it's <code>&lt; 53</code>, saving one character. Finally, we've also eliminated the
+<code>l</code> parameter, and just use the global variable <code>d</code> which represents the deck.</p>
+<p>Now, all it takes to move the jokers is:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>i=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">x</span><span>:d.</span><span style="color:#bf616a;">index</span><span>(x)
+</span><span>p=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">j</span><span>:</span><span style="color:#d08770;">53</span><span>&gt;(k:=</span><span style="color:#bf616a;">i</span><span>(j))and d[:k]+[d[k+</span><span style="color:#d08770;">1</span><span>],j]+d[k+</span><span style="color:#d08770;">2</span><span>:]or d[::k]+d[</span><span style="color:#d08770;">1</span><span>:k]
+</span><span style="color:#65737e;"># A = 53, B = 54
+</span><span>d=</span><span style="color:#bf616a;">p</span><span>(A)
+</span><span>d=</span><span style="color:#bf616a;">p</span><span>(B)
+</span><span>d=</span><span style="color:#bf616a;">p</span><span>(B)
+</span></code></pre>
+<p>We were really happy with this <code>push</code> function. It's just so compactified and *mwah*
+chef's kiss.</p>
+<h1 id="part-two-cuts">Part Two: Cuts</h1>
+<p>The next step is to perform a triple cut. This is best explained visually. Suppose our deck looks
+like this (with some cards omitted): 1 2 3 <em>A</em> 4 5 6 <em>B</em> 7 8 9. We just swap
+the portions to the <em>outsides</em> of the jokers, so we get 7 8 9 <em>A</em> 4 5 6 <em>B</em> 1 2 3.
+Notice that the jokers don't move, nor do the cards between them.</p>
+<p>We first to figure out which joker is to the left (low), and which one is to the
+right (high)<sup class="footnote-reference"><a href="#3">3</a></sup>. We started by just using python's <code>sorted</code> function, like this:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>l, h = </span><span style="color:#96b5b4;">sorted</span><span>([</span><span style="color:#bf616a;">i</span><span>(A), </span><span style="color:#bf616a;">i</span><span>(B)])
+</span><span>d = [*d[h+</span><span style="color:#d08770;">1</span><span>:], *d[l:h + </span><span style="color:#d08770;">1</span><span>], *d[:l]]
+</span></code></pre>
+<p>Since <code>sorted</code> seems kinda long, we also tried some other methods for ordering the
+two joker indices. One failed (but cool) attempt uses xor:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>a=</span><span style="color:#bf616a;">i</span><span>(A)
+</span><span>b=</span><span style="color:#bf616a;">i</span><span>(B)
+</span><span>l=</span><span style="color:#96b5b4;">min</span><span>(a,b)
+</span><span>h=l^a^b
+</span></code></pre>
+<p>but it's still quite a fair bit longer. Let's compress and improve the main triple
+cutting action now. Once again, we immediately ditch the stars:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>d=[*d[h+</span><span style="color:#d08770;">1</span><span>:],*d[l:h+</span><span style="color:#d08770;">1</span><span>],*d[:l]]
+</span><span>d=d[h+</span><span style="color:#d08770;">1</span><span>:]+d[l:h+</span><span style="color:#d08770;">1</span><span>]+d[:l]
+</span></code></pre>
+<p>And honestly, that's about as short as we could get the triple cut.</p>
+<p>The next cut is a count cut. Look at the bottom card of the deck, and move that
+many cards from the top to just above it. Count the jokers as having value 53.
+Here's an example</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>vvvvvvvvvvv last card is 5, so we move the top 5 cards
+</span><span>[2 4 6 8 1] 3 5 -&gt; 3 [2 4 6 8 1] 5
+</span></code></pre>
+<p>The code to execute this cut is also pretty simple (<code>b</code> means bottom):</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>b = </span><span style="color:#96b5b4;">min</span><span>(d[-</span><span style="color:#d08770;">1</span><span>], A)
+</span><span>d = [*d[b:-</span><span style="color:#d08770;">1</span><span>], *d[:b], d[-</span><span style="color:#d08770;">1</span><span>]]
+</span></code></pre>
+<p>We have to <code>min</code> the bottom card with the value of the <em>A</em> joker, since
+we also want to count the <em>B</em> joker as 53. Let's quickly eliminate the stars,
+saving one character:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>d=[*d[b:-</span><span style="color:#d08770;">1</span><span>],*d[:b],d[-</span><span style="color:#d08770;">1</span><span>]]
+</span><span>d=d[b:-</span><span style="color:#d08770;">1</span><span>]+d[:b]+[d[-</span><span style="color:#d08770;">1</span><span>]]</span><span style="background-color:#bf616a;color:#2b303b;">]</span><span>
+</span></code></pre>
+<p>Now Bennett was thinking, what if we don't take the <code>min</code>, and pretend the deck is
+53 cards long, then just add back the last card at the end? Doing this, we can
+eliminate quite a few characters!</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>b=</span><span style="color:#96b5b4;">min</span><span>(d[-</span><span style="color:#d08770;">1</span><span>],A)
+</span><span>d=[*d[b:-</span><span style="color:#d08770;">1</span><span>],*d[:b],d[-</span><span style="color:#d08770;">1</span><span>]]
+</span><span>
+</span><span>b=d[-</span><span style="color:#d08770;">1</span><span>]
+</span><span>d=d[b:-</span><span style="color:#d08770;">1</span><span>]+d[:-</span><span style="color:#d08770;">1</span><span>][:b]+[b]
+</span><span style="color:#65737e;">#                    ^^^
+</span></code></pre>
+<p>Since we now have <code>b</code> <em>defined</em> as <code>d[-1]</code>, we can replace the last term with <code>b</code>!
+Now both lines are shorter! This was pretty sick.</p>
+<h1 id="extracting-the-keystream-value">Extracting the Keystream Value</h1>
+<p>Finally, we just use the value of top card as an index. If it's not a joker, we
+return the deck at that index, otherwise, we recurse and execute the entire
+keystream procedure again. In other characters:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>t=</span><span style="color:#96b5b4;">min</span><span>(d[</span><span style="color:#d08770;">0</span><span>],A)
+</span><span style="color:#b48ead;">return </span><span>d[t]&lt;A and d[t]or </span><span style="color:#bf616a;">keystream</span><span>()
+</span></code></pre>
+<p>Our program now looks like this (with some omissions for clarity):</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>i=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">x</span><span>:d.</span><span style="color:#bf616a;">index</span><span>(x)
+</span><span>p=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">j</span><span>:</span><span style="color:#d08770;">53</span><span>&gt;(k:=</span><span style="color:#bf616a;">i</span><span>(j))and d[:k]+[d[k+</span><span style="color:#d08770;">1</span><span>],j]+d[k+</span><span style="color:#d08770;">2</span><span>:]or d[::k]+d[</span><span style="color:#d08770;">1</span><span>:k]
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">keystream</span><span>():
+</span><span>    </span><span style="color:#b48ead;">global </span><span>d, A, B
+</span><span>    d=</span><span style="color:#bf616a;">p</span><span>(A)
+</span><span>    d=</span><span style="color:#bf616a;">p</span><span>(B)
+</span><span>    d=</span><span style="color:#bf616a;">p</span><span>(B)
+</span><span>
+</span><span>    </span><span style="color:#65737e;"># triple cut
+</span><span>    lo,hi=</span><span style="color:#96b5b4;">sorted</span><span>([</span><span style="color:#bf616a;">i</span><span>(A),</span><span style="color:#bf616a;">i</span><span>(B)])
+</span><span>    d=d[hi+</span><span style="color:#d08770;">1</span><span>:]+d[lo:hi+</span><span style="color:#d08770;">1</span><span>]+d[:lo]
+</span><span>
+</span><span>    </span><span style="color:#65737e;"># count end
+</span><span>    b=</span><span style="color:#96b5b4;">min</span><span>(d[-</span><span style="color:#d08770;">1</span><span>],A)
+</span><span>    d=d[b:-</span><span style="color:#d08770;">1</span><span>]+d[:b]+[d[-</span><span style="color:#d08770;">1</span><span>]]
+</span><span>
+</span><span>    </span><span style="color:#65737e;"># return value
+</span><span>    t=</span><span style="color:#96b5b4;">min</span><span>(d[</span><span style="color:#d08770;">0</span><span>],A)
+</span><span>    </span><span style="color:#b48ead;">return </span><span>d[t]&lt;A and d[t]or </span><span style="color:#bf616a;">keystream</span><span>()
+</span></code></pre>
+<p>Quite a bit shorter!</p>
+<h1 id="actual-encryption">Actual Encryption</h1>
+<p>To encrypt some text, we now have to combine the keystream and plain text. We
+started with:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">for </span><span>c </span><span style="color:#b48ead;">in </span><span>&quot;</span><span style="color:#a3be8c;">&lt;text&gt;</span><span>&quot;:
+</span><span>    enc = </span><span style="color:#d08770;">96 </span><span>+ ((</span><span style="color:#96b5b4;">ord</span><span>(c) - </span><span style="color:#d08770;">96 </span><span>+ </span><span style="color:#bf616a;">keystream</span><span>()) % </span><span style="color:#d08770;">26 </span><span>or </span><span style="color:#d08770;">26</span><span>)
+</span><span>    result += </span><span style="color:#96b5b4;">chr</span><span>(enc)
+</span></code></pre>
+<p>Note that 96 is 1 less than the ASCII value of 'a'. This snippet also has a bug!
+If our plaintext + keystream is 0 mod 26, we'll get <code>chr(96) = 'z'</code>. We can
+fix this easily by using 97 instead of 96 as our offset. With that out of the
+way, we can now define a nice <code>encrypt</code> function:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>encrypt=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">s</span><span>:&quot;&quot;.</span><span style="color:#bf616a;">join</span><span>(</span><span style="color:#96b5b4;">chr</span><span>(</span><span style="color:#d08770;">97</span><span>+(</span><span style="color:#96b5b4;">ord</span><span>(c)-</span><span style="color:#d08770;">97</span><span>+</span><span style="color:#bf616a;">k</span><span>())%</span><span style="color:#d08770;">26</span><span>)</span><span style="color:#b48ead;">for </span><span>c </span><span style="color:#b48ead;">in </span><span>s)
+</span></code></pre>
+<p>At this point, we were at just under 350 characters, IIRC, but we still wanted
+to do better. There were a few small changes, like adding and deleting some
+variables, but our biggest concerns were the <code>return</code> and <code>global</code> keywords used
+in our keystream function.</p>
+<h1 id="functional-programming">Functional Programming</h1>
+<p>For some reason, a few days before, I had implemented this algorithm in Haskell.
+Since Haskell is <em>purely functional</em>, it has no mutation, so global variables
+are obviously out of style. Sort of vibing off of this, I thought maybe we could
+do some multiparameter tail-recursive fold stuff to update the state of the deck
+between calls to keystream. And it turns out you can! The basic idea is to
+produce the new inputs to the encrypt function while encrypting a character.</p>
+<p>The Haskelly way to do things would be something like this</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#bf616a;">encrypt</span><span>(string, deck) =
+</span><span style="color:#65737e;">#  v encrypt character                   v recursively encrypt the rest
+</span><span>   </span><span style="color:#bf616a;">combine</span><span>(string[</span><span style="color:#d08770;">0</span><span>], </span><span style="color:#bf616a;">keystream</span><span>(deck)) + </span><span style="color:#bf616a;">encrypt</span><span>(string[</span><span style="color:#d08770;">1</span><span>:], newdeck)
+</span><span style="color:#65737e;">#                                      ^ combine the two parts
+</span></code></pre>
+<p>where the keystream function returns the new deck! We basically set up a
+function signature like this:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>encrypt(string, deck, encrypted) -&gt; string
+</span></code></pre>
+<p>and reverse engineered it. I'll just show what the result is:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">e</span><span>(</span><span style="color:#bf616a;">s</span><span>,</span><span style="color:#bf616a;">d</span><span>,</span><span style="color:#bf616a;">t</span><span>=&quot;&quot;):
+</span><span>    </span><span style="color:#65737e;"># move jokers
+</span><span>    d=</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">54</span><span>,</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">54</span><span>,</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">53</span><span>,d)))
+</span><span>    </span><span style="color:#65737e;"># triple cut
+</span><span>    l,h=</span><span style="color:#96b5b4;">sorted</span><span>([d.</span><span style="color:#bf616a;">index</span><span>(</span><span style="color:#d08770;">53</span><span>),d.</span><span style="color:#bf616a;">index</span><span>(</span><span style="color:#d08770;">54</span><span>)])
+</span><span>    d=d[h+</span><span style="color:#d08770;">1</span><span>:]+d[l:h+</span><span style="color:#d08770;">1</span><span>]+d[:l]
+</span><span>    </span><span style="color:#65737e;"># count cut
+</span><span>    b=d[-</span><span style="color:#d08770;">1</span><span>]
+</span><span>    d=d[b:-</span><span style="color:#d08770;">1</span><span>]+d[:-</span><span style="color:#d08770;">1</span><span>][:b]+[b]
+</span><span>    </span><span style="color:#65737e;"># get the keystream value, or &quot;offset&quot;
+</span><span>    o=d[d[</span><span style="color:#d08770;">0</span><span>]%54or-</span><span style="color:#d08770;">1</span><span>]
+</span><span>    </span><span style="color:#65737e;"># nested ternary madness
+</span><span>    </span><span style="color:#b48ead;">return </span><span>s and (
+</span><span>            o&lt;</span><span style="color:#d08770;">53 </span><span>and </span><span style="color:#bf616a;">e</span><span>(s[</span><span style="color:#d08770;">1</span><span>:],d,t+</span><span style="color:#96b5b4;">chr</span><span>((</span><span style="color:#96b5b4;">ord</span><span>(s[</span><span style="color:#d08770;">0</span><span>])-</span><span style="color:#d08770;">97</span><span>+o)%</span><span style="color:#d08770;">26</span><span>+</span><span style="color:#d08770;">97</span><span>))
+</span><span>                 or </span><span style="color:#bf616a;">e</span><span>(s,d,t)
+</span><span>           ) or t
+</span><span>encrypt=e
+</span></code></pre>
+<p>Firstly, we define <code>e</code> so that we can recurse without having to pay the cost
+of typing out <code>encrypt</code>, then just &quot;rename&quot; it to <code>e</code> at the end.</p>
+<p>The parameter <code>s</code> represents the input string, <code>d</code> represents the deck, and
+<code>t</code> ... I don't remember why it's called that ... is our encrypted text. I think
+we wanted to call it <code>e</code> for encryption but that wasn't an option.</p>
+<p>Ok, so this ternary monster. First, we check if <code>s</code> is empty. If it is, it's
+falsy so we'll take the second branch and return <code>t</code>, or the fully encrypted
+string. Otherwise, we go into the second ternary.</p>
+<p>Here, we check if the keystream value was a joker. It it was, we recurse with
+the same <code>s</code> and <code>t</code>, since we haven't gotten a valid keystream value, but
+notice that <code>d</code> has changed. If we do have a valid keystream value, we recurse
+on the string with the first character chopped off, our new deck, and an
+encrypted string with one character freshly added.</p>
+<p>Altogether this somehow saved <strong>12</strong> characters! I have no idea how, but it's
+elegant and arcane and completely inscrutable so I love it.</p>
+<p>That's basically it! There were probably some other small optimizations we did
+that aren't worth covering here. Overall, it's so satisfying just seeing the code
+shrink and shrink. You should give golfing a try :)</p>
+<p>Check out Bennett's <a href="https://andorlando.github.io/static/blogs/index">blog</a> for
+his writeup and <a href="https://github.com/andOrlando">GitHub</a> for other insane
+code he's written.</p>
+<p>And lastly, you can see the code in its full glory on
+<a href="https://github.com/PontifexEncrypt/Pontifex/blob/main/solitaire-golf-fprasx.py">GitHub</a>
+and right here:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>p=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">j</span><span>,</span><span style="color:#bf616a;">d</span><span>:</span><span style="color:#d08770;">53</span><span>&gt;(k:=d.</span><span style="color:#bf616a;">index</span><span>(j))and d[:k]+[d[k+</span><span style="color:#d08770;">1</span><span>],j]+d[k+</span><span style="color:#d08770;">2</span><span>:]or d[::k]+d[</span><span style="color:#d08770;">1</span><span>:k]
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">e</span><span>(</span><span style="color:#bf616a;">s</span><span>,</span><span style="color:#bf616a;">d</span><span>,</span><span style="color:#bf616a;">t</span><span>=&quot;&quot;):d=</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">54</span><span>,</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">54</span><span>,</span><span style="color:#bf616a;">p</span><span>(</span><span style="color:#d08770;">53</span><span>,d)));l,h=</span><span style="color:#96b5b4;">sorted</span><span>([d.</span><span style="color:#bf616a;">index</span><span>(</span><span style="color:#d08770;">53</span><span>),d.</span><span style="color:#bf616a;">index</span><span>(</span><span style="color:#d08770;">54</span><span>)]);d=d[h+</span><span style="color:#d08770;">1</span><span>:]+d[l:h+</span><span style="color:#d08770;">1</span><span>]+d[:l];b=d[-</span><span style="color:#d08770;">1</span><span>];d=d[b:-</span><span style="color:#d08770;">1</span><span>]+d[:-</span><span style="color:#d08770;">1</span><span>][:b]+[b];o=d[d[</span><span style="color:#d08770;">0</span><span>]%54or-</span><span style="color:#d08770;">1</span><span>];</span><span style="color:#b48ead;">return </span><span>s and(o&lt;53and </span><span style="color:#bf616a;">e</span><span>(s[</span><span style="color:#d08770;">1</span><span>:],d,t+</span><span style="color:#96b5b4;">chr</span><span>((</span><span style="color:#96b5b4;">ord</span><span>(s[</span><span style="color:#d08770;">0</span><span>])-</span><span style="color:#d08770;">97</span><span>+o)%</span><span style="color:#d08770;">26</span><span>+</span><span style="color:#d08770;">97</span><span>))or </span><span style="color:#bf616a;">e</span><span>(s,d,t))or t
+</span><span>encrypt=e
+</span></code></pre>
+<p>Thanks for reading, and I'll see you next time!</p>
+<p><sup class="footnote-reference"><a href="#1">1</a></sup> Ok I lied; there was a small burrito break.</p>
+<p><sup class="footnote-reference"><a href="#2">2</a></sup> Starter code</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>index=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>, </span><span style="color:#bf616a;">x</span><span>: l.</span><span style="color:#bf616a;">index</span><span>(x)
+</span><span>push=</span><span style="color:#b48ead;">lambda </span><span style="color:#bf616a;">l</span><span>, </span><span style="color:#bf616a;">i</span><span>: l[:i] + [l[i + </span><span style="color:#d08770;">1</span><span>]] + [l[i]] + l[i + </span><span style="color:#d08770;">2</span><span>:]
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">keystream</span><span>():
+</span><span>    </span><span style="color:#b48ead;">global </span><span>deck, A, B, </span><span style="color:#bf616a;">DECKSIZE
+</span><span>    </span><span style="color:#65737e;"># cycle ajoker
+</span><span>    aidx = </span><span style="color:#bf616a;">index</span><span>(deck, A)
+</span><span>    deck = </span><span style="color:#bf616a;">push</span><span>(deck, aidx) </span><span style="color:#b48ead;">if </span><span>aidx != </span><span style="color:#bf616a;">DECKSIZE </span><span>- </span><span style="color:#d08770;">1 </span><span style="color:#b48ead;">else </span><span>(
+</span><span>        [deck[</span><span style="color:#d08770;">0</span><span>], deck[aidx], *deck[</span><span style="color:#d08770;">1</span><span>:aidx]])
+</span><span>
+</span><span>    </span><span style="color:#65737e;"># cycle bjoker
+</span><span>    bidx = </span><span style="color:#bf616a;">index</span><span>(deck, B)
+</span><span>    deck = </span><span style="color:#bf616a;">push</span><span>(deck, bidx) </span><span style="color:#b48ead;">if </span><span>bidx != </span><span style="color:#bf616a;">DECKSIZE</span><span>-</span><span style="color:#d08770;">1 </span><span style="color:#b48ead;">else </span><span>(
+</span><span>        [deck[</span><span style="color:#d08770;">0</span><span>], deck[bidx], *deck[</span><span style="color:#d08770;">1</span><span>:bidx]])
+</span><span>
+</span><span>    bidx = </span><span style="color:#bf616a;">index</span><span>(deck, B)
+</span><span>    deck = </span><span style="color:#bf616a;">push</span><span>(deck, bidx) </span><span style="color:#b48ead;">if </span><span>bidx != </span><span style="color:#bf616a;">DECKSIZE</span><span>-</span><span style="color:#d08770;">1 </span><span style="color:#b48ead;">else </span><span>(
+</span><span>        [deck[</span><span style="color:#d08770;">0</span><span>], deck[bidx], *deck[</span><span style="color:#d08770;">1</span><span>:bidx]])
+</span><span>
+</span><span>    </span><span style="color:#65737e;"># triple cut
+</span><span>    [lo, hi] = </span><span style="color:#96b5b4;">sorted</span><span>([</span><span style="color:#bf616a;">index</span><span>(deck, A), </span><span style="color:#bf616a;">index</span><span>(deck, B)])
+</span><span>    deck = [*deck[hi+</span><span style="color:#d08770;">1</span><span>:], *deck[lo:hi + </span><span style="color:#d08770;">1</span><span>], *deck[:lo]]
+</span><span>
+</span><span>    </span><span style="color:#65737e;"># count end
+</span><span>    bot = </span><span style="color:#96b5b4;">min</span><span>(deck[-</span><span style="color:#d08770;">1</span><span>], A)
+</span><span>    deck = [*deck[bot:-</span><span style="color:#d08770;">1</span><span>], *deck[:bot], deck[-</span><span style="color:#d08770;">1</span><span>]]
+</span><span>
+</span><span>    </span><span style="color:#65737e;"># return value
+</span><span>    top = </span><span style="color:#96b5b4;">min</span><span>(deck[</span><span style="color:#d08770;">0</span><span>], A)
+</span><span>    </span><span style="color:#b48ead;">return </span><span>deck[top] </span><span style="color:#b48ead;">if </span><span>deck[top] &lt; A </span><span style="color:#b48ead;">else </span><span style="color:#bf616a;">keystream</span><span>()
+</span></code></pre>
+<p><sup class="footnote-reference"><a href="#3">3</a></sup> I just realized this is contratry to our intuition about a face down deck.
+The first card is the highest.</p>
+
+</div>
+
+        </div>
+
+    </body>
+
+</html>
